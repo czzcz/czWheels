@@ -19,5 +19,6 @@ public class TestSkipList {
     @Test
     public void test1() {
         SkipList<String> list = new SkipList();
+
     }
 }
