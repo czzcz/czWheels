@@ -6,6 +6,7 @@
 package cn.czzcz.struct.test;
 
 import cn.czzcz.struct.skiplist.SkipList;
+import cn.czzcz.struct.skiplist.SkipListNode;
 import org.junit.Test;
 
 /**
@@ -18,7 +19,8 @@ import org.junit.Test;
 public class TestSkipList {
     @Test
     public void test1() {
-        SkipList<String> list = new SkipList();
-
+        SkipList<String> list = new SkipList<String>();
+        list
+        System.out.println();
     }
 }

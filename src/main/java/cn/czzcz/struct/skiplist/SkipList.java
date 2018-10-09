@@ -5,8 +5,6 @@
  */
 package cn.czzcz.struct.skiplist;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 /**
  * @description:
@@ -19,23 +17,22 @@ public class SkipList<T> {
     SkipListNode<T> head;
     SkipListNode<T> tail;
 
-    SkipList() {
+    public SkipList() {
         head = new SkipListNode<T>(null, Double.MIN_VALUE);
     }
 
-    public void insert(SkipListNode node) {
+    public void add(SkipListNode node) {
         SkipListNode<T> curr = head;
         while (curr != null) {
+            if (curr.levels[curr.level] != null) {
+                for (int i = 0; curr.level - i > 0; i++) {
+                    if (curr.levels[curr.level - i].score < node.score) {
 
-            if (curr.getNext() == null) {
-                if (curr.getDown() == null) {
-                    curr.setNext(node);
-                } else {
-                    // 没有下个结点，走下层
-                    curr = curr.getDown();
+                    }
+
                 }
             } else {
-                curr = curr.getNext();
+
             }
         }
     }

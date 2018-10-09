@@ -13,45 +13,18 @@ package cn.czzcz.struct.skiplist;
  * @date: 2018/10/9  
  */
 public class SkipListNode<T> {
-    private double score;
-    private T obj;
-    private SkipListNode next;
-    private SkipListNode down;
+    private static final int MAX_LEVEL_LENGTH = 7;
 
-    SkipListNode(T obj, double score) {
+    double score;
+    T obj;
+    SkipListNode back;
+    int level;
+    SkipListNode[] levels;
+
+    public SkipListNode(T obj, double score) {
         this.obj = obj;
         this.score = score;
-    }
-
-    public double getScore() {
-        return score;
-    }
-
-    public void setScore(double score) {
-        this.score = score;
-    }
-
-    public T getObj() {
-        return obj;
-    }
-
-    public void setObj(T obj) {
-        this.obj = obj;
-    }
-
-    public SkipListNode getNext() {
-        return next;
-    }
-
-    public void setNext(SkipListNode next) {
-        this.next = next;
-    }
-
-    public SkipListNode getDown() {
-        return down;
-    }
-
-    public void setDown(SkipListNode down) {
-        this.down = down;
+        this.level = 0;
+        levels = new SkipListNode[MAX_LEVEL_LENGTH];
     }
 }
